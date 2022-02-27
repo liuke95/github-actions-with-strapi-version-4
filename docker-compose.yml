@@ -1,0 +1,17 @@
+version: '3'
+services:
+  mariadb-10:
+    image: mariadb:10.2
+    restart: always
+    volumes:
+      - $PWD/mysql:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: SAPWs9G524FvdBA4hY5q
+    ports:
+      - '3306:3306'
+    networks:
+      ideabox_network:
+
+networks:
+  ideabox_network:
+    driver: bridge
